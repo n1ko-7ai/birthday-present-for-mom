@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Квиз для мамы</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #ffe5ec;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #ff69b4;
+    }
+    .quiz-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background: #ff4081;
+    }
+  </style>
+</head>
+<body>
+  <h1>Пройди квиз!</h1>
+  <div class="quiz-container">
+    <p><strong>Вопрос:</strong> Как зовут лучшую маму на свете?</p>
+    <input type="text" id="answer" placeholder="Введите ответ">
+    <br><br>
+    <button onclick="checkAnswer()">Ответить</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById("answer").value.trim().toLowerCase();
+      const message = document.getElementById("message");
+      if (answer.toLowerCase() === "люба" || answer.toLowerCase() === "любовь" || answer.toLowerCase() == "ли любовь") {
+        window.location.href = "congrats.html";
+      } else {
+        message.textContent = "Неверно! Попробуй снова.";
+        message.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
